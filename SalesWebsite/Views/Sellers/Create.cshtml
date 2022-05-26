@@ -1,0 +1,31 @@
+﻿@model SalesWebsite.Models.Seller;
+@{ 
+    ViewData["Title"] = "Insert new Seller";
+}
+
+<h2 style="text-align:center">@ViewData["Title"]</h2>
+<h5 style="text-align:center">Enter the data the new Seller</h5>
+<hr />
+
+<div class="row">
+    <div>
+        <form asp-action="Create">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <label asp-for="Email" class="control-label"></label>
+                <input type="email" asp-for="Email" class="form-control" />
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input type="date" asp-for="BirthDate" class="form-control" />
+                <label asp-for="BaseSalary" class="control-label"></label>
+                <input asp-for="BaseSalary" class="form-control" />
+                <p></p>
+                <div style="text-align:center">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
