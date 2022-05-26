@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SalesWebsite.Models.Department>
+
+@{
+    ViewData["Title"] = "Departaments";
+}
+
+<h2 style="text-align:center">@ViewData["Title"]</h2>
+
+<h5 style="text-align:center"> Lista de Departamentos </h5>
+
+<hr />
+<a asp-action="Create" class="btn btn-default">New</a>
+
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="text-align:center">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th style="text-align:center">
+                Options
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td style="text-align:center">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

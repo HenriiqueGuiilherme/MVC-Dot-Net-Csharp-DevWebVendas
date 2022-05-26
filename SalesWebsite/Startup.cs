@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using SalesWebsite.Data;
 
 namespace SalesWebsite
 {
@@ -33,6 +35,10 @@ namespace SalesWebsite
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<SalesWebsiteContext>(options =>
+                    options.UseMySql(Configuration.GetConnectionString("SalesWebsiteContext"),
+                    builder => builder.MigrationsAssembly("SalesWebsite")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
