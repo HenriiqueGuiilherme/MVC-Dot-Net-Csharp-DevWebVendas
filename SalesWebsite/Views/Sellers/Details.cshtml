@@ -1,0 +1,49 @@
+﻿@model SalesWebsite.Models.Seller
+
+@{ 
+    ViewData["Title"] = "Details";
+}
+
+<h2 style="text-align:center">@ViewData["Title"]</h2>
+<h5 style="text-align:center">Details of the Sellers</h5>
+<hr />
+
+<div>
+    <dl>
+        <dt style="text-align:initial">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd style="text-align:initial">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt style="text-align:initial">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd style="text-align:initial">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt style="text-align:initial">
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+        <dd style="text-align:initial">
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+        <dt style="text-align:initial">
+            @Html.DisplayNameFor(model => model.BaseSalary)
+        </dt>
+        <dd style="text-align:initial">
+            @Html.DisplayFor(model => model.BaseSalary)
+        </dd>
+        <dt style="text-align:initial">
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dd style="text-align:initial">
+            @Html.DisplayFor(model => model.Department.Name)
+        </dd>
+    </dl>
+
+    <form asp-action="Edit">
+        <input type="submit" value="Edit" class="btn btn-primary"1  />
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
