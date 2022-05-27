@@ -35,7 +35,6 @@ namespace SalesWebsite.Models
         {
             SalesRecords.Remove(sr);
         }
-
         public double TotalSales(DateTime initial, DateTime final) //Total sales amount in this period
         {
             return SalesRecords.Where(x => x.Date >= initial && x.Date <= final).Sum(x => x.Amount);
