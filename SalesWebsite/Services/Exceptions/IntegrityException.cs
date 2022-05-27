@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace SalesWebsite.Services.Exceptions
+{
+    public class IntegrityException : ApplicationException
+    {
+        public IntegrityException(string message) : base(message)
+        {
+
+        }
+    }
+}
